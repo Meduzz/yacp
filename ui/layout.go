@@ -25,12 +25,38 @@ func Page(content gml.Tag) gml.Tag {
 	.chat-widget {
 		flex-grow: 1;
 		flex-basis: auto;
-		padding: 2em;
 	}
 
 	.menu-widget {
 		flex-basis: 25%;
-		padding: 2em;
+		padding: 1em;
+	}
+
+	.message {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	.message span {
+		display: block;
+		font-weight: bold;
+		margin-bottom: 1em
+	}
+
+	.input-group {
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	.input-group label {
+		display: block;
+		font-weight: bold;
+	}
+
+	.thinking {
+		color: #cccccc;
+		padding-top: 1em;
+		padding-bottom: 1em;
 	}
 	`
 
@@ -47,6 +73,9 @@ func Page(content gml.Tag) gml.Tag {
 }
 
 // Layout creates a flex box layout.
-func Layout(content ...gml.Tag) gml.Tag {
-	return tags.Div(gml.Tags(content...), attr.Class("layout"))
+func Layout(title string, content ...gml.Tag) gml.Tag {
+	return tags.Div(gml.Tags(
+		tags.H1(gml.Text(title)),
+		gml.Tags(content...),
+	), attr.Class("layout"))
 }
