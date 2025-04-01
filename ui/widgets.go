@@ -87,6 +87,8 @@ func Chat(chat *storage.Chat) gml.Tag {
 	))
 }
 
+// TODO
+// - Add textarea for system prompt
 func CreateChat() gml.Tag {
 	return tags.Form(gml.Tags(
 		tags.Div(gml.Tags(

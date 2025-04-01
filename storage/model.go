@@ -5,14 +5,13 @@ type (
 		ID       string         // uuid
 		Parent   string         // ID of a parent chat
 		Name     string         // name
-		Prompt   string         // system prompt
 		Host     string         // llm host
 		Messages []*ChatMessage // the chat
 	}
 
 	ChatMessage struct {
 		ID      string // uuid
-		Role    string // user|assistant
+		Role    string // user|assistant|tool
 		Message string // the prompt/response
 	}
 )
